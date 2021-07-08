@@ -26,7 +26,6 @@ class ViewController: UIViewController {
 				case .success(let response):
 					let users = try! JSONDecoder().decode([User].self, from: response.data)
 					self.users = users
-					//self.userController.user = users[0]
 					self.table.reloadData()
 				
 				case .failure(let error):
