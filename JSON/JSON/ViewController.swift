@@ -59,8 +59,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 		
 		userProvider.request(.deleteUser(id: user.id)) { result in
 			switch result{
-				case .success(let response):
-					print("Delete: \(response)")
+				case .success(_):
 					self.users.remove(at: indexPath.row)
 					self.table.deleteRows(at: [indexPath], with: .automatic)
 					
