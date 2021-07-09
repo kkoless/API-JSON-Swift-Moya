@@ -52,6 +52,24 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 		return 355.0
 	}
 	
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		guard editingStyle == .delete else { return }
+		
+		let user = users[indexPath.row]
+		
+		userProvider.request(.deleteUser(id: user.id)) { result in
+			switch result{
+				case .success(let response):
+					print("Delete: \(response)")
+					self.users.remove(at: indexPath.row)
+					self.table.deleteRows(at: [indexPath], with: .automatic)
+					
+				case .failure(let error):
+					print(error)
+			}
+		}
+	}
+	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "idCell") as! UserInfoTableViewCell
 		

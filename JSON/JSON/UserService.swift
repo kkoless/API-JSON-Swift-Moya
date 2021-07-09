@@ -10,6 +10,7 @@ import Moya
 
 enum UserService {
 	case readUsers
+	case deleteUser(id: Int)
 }
 
 extension UserService: TargetType {
@@ -22,6 +23,8 @@ extension UserService: TargetType {
 		switch self {
 			case .readUsers:
 				return "/users"
+			case .deleteUser(let id):
+				return "/users/\(id)"
 		}
 	}
 	
@@ -29,6 +32,8 @@ extension UserService: TargetType {
 		switch self {
 			case .readUsers:
 				return .get
+			case .deleteUser(_):
+				return .delete
 		}
 	}
 	
@@ -38,7 +43,7 @@ extension UserService: TargetType {
 	
 	var task: Task {
 		switch self {
-			case .readUsers:
+			case .readUsers, .deleteUser(_):
 				return .requestPlain
 		}
 	}
