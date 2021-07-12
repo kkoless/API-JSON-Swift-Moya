@@ -5,15 +5,17 @@ Check "development" branch
 
 
 
-**PREVIEW**
+### PREVIEW
 
 
 Список пользователей. 
 
 Вывод пользователей в виде таблицы
 
-<img src="Preview/1.png" width="300px" height="600px"> <img src="Preview/2.png" width="300px" height="600px">. 
+<img src="Preview/5.png" width="300px" height="600px"> <img src="Preview/6.png" width="300px" height="600px">. 
 
-Возможность удаления пользователя из списка
-
-<img src="Preview/3.png" width="300px" height="600px"> <img src="Preview/4.png" width="300px" height="600px">
+### Некоторые изменения:
+- Скачивание изображений из интренета
+- Изменение нескольких методов под RX
+- Возможность удалять пользователей из таблицы больше нет
+- Изменение структуры проекта
