@@ -14,10 +14,11 @@
 		E51F61DE26974B660077080A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51F61DC26974B660077080A /* Main.storyboard */; };
 		E51F61E026974B670077080A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51F61DF26974B670077080A /* Assets.xcassets */; };
 		E51F61E326974B670077080A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51F61E126974B670077080A /* LaunchScreen.storyboard */; };
-		E5461BD726974D7A00A1254D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5461BD626974D7A00A1254D /* User.swift */; };
-		E5461BD926974D9200A1254D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5461BD826974D9200A1254D /* UserService.swift */; };
+		E5461BD726974D7A00A1254D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5461BD626974D7A00A1254D /* UserModel.swift */; };
+		E5461BD926974D9200A1254D /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5461BD826974D9200A1254D /* UserAPI.swift */; };
 		E5461BE026978E1100A1254D /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5461BDE26978E1100A1254D /* UserInfoTableViewCell.swift */; };
 		E5461BE126978E1100A1254D /* UserInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5461BDF26978E1100A1254D /* UserInfoTableViewCell.xib */; };
+		E5F77BA5269B0CDE0047982E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F77BA4269B0CDE0047982E /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +33,11 @@
 		E51F61DF26974B670077080A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E51F61E226974B670077080A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E51F61E426974B670077080A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5461BD626974D7A00A1254D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E5461BD826974D9200A1254D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		E5461BD626974D7A00A1254D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E5461BD826974D9200A1254D /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		E5461BDE26978E1100A1254D /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		E5461BDF26978E1100A1254D /* UserInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoTableViewCell.xib; sourceTree = "<group>"; };
+		E5F77BA4269B0CDE0047982E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,19 +90,68 @@
 		E51F61D526974B660077080A /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				E51F61D626974B660077080A /* AppDelegate.swift */,
-				E51F61D826974B660077080A /* SceneDelegate.swift */,
-				E51F61DA26974B660077080A /* ViewController.swift */,
-				E5461BDE26978E1100A1254D /* UserInfoTableViewCell.swift */,
-				E5461BDF26978E1100A1254D /* UserInfoTableViewCell.xib */,
-				E51F61DC26974B660077080A /* Main.storyboard */,
-				E5461BD626974D7A00A1254D /* User.swift */,
-				E5461BD826974D9200A1254D /* UserService.swift */,
-				E51F61DF26974B670077080A /* Assets.xcassets */,
-				E51F61E126974B670077080A /* LaunchScreen.storyboard */,
-				E51F61E426974B670077080A /* Info.plist */,
+				E5F77BC8269C51710047982E /* App */,
+				E5F77BC9269C51810047982E /* ViewControllers */,
+				E5F77BCA269C519F0047982E /* Views */,
+				E5F77BC7269C51480047982E /* Models */,
+				E5F77BC6269C51240047982E /* Networking */,
+				E5F77BCB269C51E30047982E /* Resources */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		E5F77BC6269C51240047982E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E5F77BA4269B0CDE0047982E /* NetworkService.swift */,
+				E5461BD826974D9200A1254D /* UserAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E5F77BC7269C51480047982E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E5461BD626974D7A00A1254D /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E5F77BC8269C51710047982E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E51F61D626974B660077080A /* AppDelegate.swift */,
+				E51F61D826974B660077080A /* SceneDelegate.swift */,
+				E51F61E426974B670077080A /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E5F77BC9269C51810047982E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E51F61DA26974B660077080A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E5F77BCA269C519F0047982E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E5461BDE26978E1100A1254D /* UserInfoTableViewCell.swift */,
+				E5461BDF26978E1100A1254D /* UserInfoTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E5F77BCB269C51E30047982E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E51F61DC26974B660077080A /* Main.storyboard */,
+				E51F61DF26974B670077080A /* Assets.xcassets */,
+				E51F61E126974B670077080A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,9 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5461BD726974D7A00A1254D /* User.swift in Sources */,
+				E5461BD726974D7A00A1254D /* UserModel.swift in Sources */,
+				E5F77BA5269B0CDE0047982E /* NetworkService.swift in Sources */,
 				E5461BE026978E1100A1254D /* UserInfoTableViewCell.swift in Sources */,
-				E5461BD926974D9200A1254D /* UserService.swift in Sources */,
+				E5461BD926974D9200A1254D /* UserAPI.swift in Sources */,
 				E51F61DB26974B660077080A /* ViewController.swift in Sources */,
 				E51F61D726974B660077080A /* AppDelegate.swift in Sources */,
 				E51F61D926974B660077080A /* SceneDelegate.swift in Sources */,
@@ -371,14 +423,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = JSON/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = JSON/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kolesnikov.JSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -390,14 +444,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = JSON/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = JSON/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kolesnikov.JSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
