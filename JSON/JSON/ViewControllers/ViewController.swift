@@ -28,17 +28,7 @@ class ViewController: UIViewController {
 		networkService.getUsers(provider: userProvider).bind(to: table.rx.items(cellIdentifier: "idCell", cellType: UserInfoTableViewCell.self)){
 			index, model, cell in
 			
-			cell.nameLabel.text = model.name
-			cell.idLabel.text = String(model.id)
-			cell.usernameLabel.text = model.username
-			cell.emailLabel.text = model.email
-			cell.phoneLabel.text = model.phone
-			cell.websiteLabel.text = model.website
-			
-			cell.streetLabel.text = model.address.street
-			cell.suiteLabel.text = model.address.suite
-			cell.cityLabel.text = model.address.city
-			cell.zipcodeLabel.text = model.address.zipcode
+			cell.setupData(model: model)
 			
 			self.fetchImage(from: "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/45117/ok-hand-emoji-clipart-md.png", cell: cell)
 			
