@@ -23,7 +23,7 @@ class UserInfoTableViewCell: UITableViewCell {
 	@IBOutlet weak var cityLabel: UILabel!
 	@IBOutlet weak var zipcodeLabel: UILabel!
 	
-	func setupData(model: UserModel) {
+	func setupData(model: User) {
 		self.nameLabel.text = model.name
 		self.idLabel.text = String(model.id)
 		self.usernameLabel.text = model.username

@@ -14,9 +14,7 @@ class ViewController: UIViewController {
 	
 	@IBOutlet weak var table: UITableView!
 	
-	private let userProvider = MoyaProvider<UserAPI>()
-	private let networkService = NetworkService()
-	
+	private let generalService = GeneralService()
 	private let bag = DisposeBag()
 	
 	
@@ -25,7 +23,7 @@ class ViewController: UIViewController {
 		
 		setupTableView()
 		
-		networkService.getUsers(provider: userProvider).bind(to: table.rx.items(cellIdentifier: "idCell", cellType: UserInfoTableViewCell.self)){
+		generalService.getData().bind(to: table.rx.items(cellIdentifier: "idCell", cellType: UserInfoTableViewCell.self)){
 			index, model, cell in
 			
 			cell.setupData(model: model)
@@ -35,6 +33,7 @@ class ViewController: UIViewController {
 		}.disposed(by: bag)
 		
 	}
+	
 	
 	private func fetchImage(from urlImage: String, cell: UserInfoTableViewCell){
 		let session = URLSession.shared
@@ -48,6 +47,7 @@ class ViewController: UIViewController {
 			}
 		}.resume()
 	}
+	
 	
 	private func setupTableView() {
 		table.rowHeight = 565.0
