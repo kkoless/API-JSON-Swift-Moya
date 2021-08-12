@@ -1,9 +1,5 @@
 # JSONPlaceholder API
 
-Check "development" branch
-
-
-
 
 ### PREVIEW
 
